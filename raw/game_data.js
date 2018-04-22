@@ -355,27 +355,27 @@ data.topics = [{
 data.genres = {
     Action: {
         id: "Action",
-        name: "Action".localize("genre")
+        name: "Action"
     },
     Adventure: {
         id: "Adventure",
-        name: "Adventure".localize("genre")
+        name: "Adventure"
     },
     RPG: {
         id: "RPG",
-        name: "RPG".localize("genre")
+        name: "RPG"
     },
     Simulation: {
         id: "Simulation",
-        name: "Simulation".localize("genre")
+        name: "Simulation"
     },
     Strategy: {
         id: "Strategy",
-        name: "Strategy".localize("genre")
+        name: "Strategy"
     },
     Casual: {
         id: "Casual",
-        name: "Casual".localize("genre")
+        name: "Casual"
     }
 }
 
@@ -870,3 +870,9 @@ data.consoles = [{
         techLevel: 7
     }
 ]
+
+var toJson = function(data, file) {
+    var fs = require('fs');
+    fs.writeFile(file, JSON.stringify(data, null, 2), 'utf8', console.log)
+}
+toJson(data, 'game_data.json')
