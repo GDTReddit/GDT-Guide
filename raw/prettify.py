@@ -57,15 +57,17 @@ def generate_consoles_result(consoles):
         result += "- Mature: {}\n".format(weightings.get(str(console['audienceWeightings'][2])))
     return result
 
-result = """
-## Topics
-{topics}
-
------------
-## Consoles
-{consoles}
-"""
 topics_result = generate_topics_result(topics)
 consoles_result = generate_consoles_result(consoles)
-with open('../DOCS.md', 'w') as f:
-    f.write(result.format(topics=topics_result, consoles=consoles_result))
+
+with open('../Consoles.md', 'w') as f:
+    f.write("""
+## Consoles
+-----------
+{consoles}""".format(consoles=consoles_result))
+
+with open('../Topics.md', 'w') as f:
+    f.write("""
+## Topics
+-----------
+{topics}""".format(topics=topics_result))
